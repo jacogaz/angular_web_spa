@@ -1,0 +1,8 @@
+<p *ngIf="!identity"> 
+  Ha ocurrido un error, si quiere acceder a la plataforma por favor, inicie sesión
+</p>
+<p *ngIf="identity"> 
+  Ha ocurrido un error
+</p>
+<p *ngIf="!identity"><a class="btn btn-outline-danger" [routerLink]="['/login']">Iniciar sesion</a></p>
+<p *ngIf="identity"><a class="btn btn-outline-danger" [routerLink]="['/inicio']">Volver</a></p>

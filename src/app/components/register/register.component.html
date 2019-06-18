@@ -1,0 +1,58 @@
+<header>
+    <div class="container-fluid justify-content-center align-items-center" style="height: 100vh;">
+
+        <div class="mask rgba-indigo-strong d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="row pt-lg-5 mt-lg-5 centrado" style="margin-top: 200px;">
+
+                    <div class="col-md-6 col-xl-5  pb-0">
+
+                        <div class="card wow fadeInRight mt-2 rounded">
+                            <div class="card-body ">
+                                <form class="col-md-12" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+                                    <div class="text-center mb-3 pt-5">
+                                        <img class="mb-4" src="../../assets/imgs/ctm_logotipo.png" alt="" width="142" height="72">
+                                    </div>
+                                    <div class="form-group row pt-3">
+                                        <div class="col-sm-12">
+                                            <input type="text" name="email" id="email" class="form-control bg-light border-0 font-weight-light" placeholder="E-mail" #email="ngModel" [(ngModel)]="user.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                            <small *ngIf="!email.valid && email.touched" class="invalid-feedback d-block">
+                          El e-mail no es valido
+                        </small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mt-3">
+                                        <div class="md-form col-sm-12">
+                                            <input type="password" name="password" id="password" class="form-control bg-light border-0 font-weight-light" placeholder="Password" #password="ngModel" [(ngModel)]="user.password" required>
+                                            <small *ngIf="!password.valid && password.touched" class="invalid-feedback d-block">
+                          La contraseña no es valida
+                        </small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mt-3 pb-2">
+                                        <div class="md-form col-sm-12 mb-0">
+                                            <input type="submit" class="form-control btn btn-danger" value="Register" [disabled]="loginForm.invalid">
+                                            <small *ngIf="status == 'error'" class="invalid-feedback d-block">
+                          Datos incorrectos
+                        </small>
+
+                                            <small class="form-control border-0 text-center mb-1 pt-4 px-0">&nbsp;</small>
+                                            <a class="form-control border-0 text-center text-danger mt-2" [routerLink]="['/login']">Back</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>

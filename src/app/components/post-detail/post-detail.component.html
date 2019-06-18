@@ -1,0 +1,30 @@
+<div class="row" *ngIf="!post">
+  <div class="col-12 col-md-12">
+    Cargando...
+  </div>
+</div>
+<div class="container" *ngIf="post">
+  <div class="row"  style="margin-top: 58px;">
+    <div class="col-12 col-md-12">
+        <img src="{{url + 'post/image/' + post.image}}" class="w-100" alt="Image">
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12 col-md-12">
+      <h5>{{post.title}}</h5>
+      <p class="card-text mb-3"><small class="text-muted">Actualizado: {{post.updated_at}}</small></p>
+      <!--<p><small>{{post.category.name}}</small></p>-->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-12">
+      <p class="border-bottom pb-2 text-justify contenido" [innerHtml]="post.content"></p>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-12 col-md-12">
+      <a [routerLink]="['/inicio']" class="text-danger"><i class="fas fa-long-arrow-alt-left"></i>&nbsp;Volver</a>
+      <input type="button" class="bg-danger text-white ml-3" (click) = "delete(post.id)" value="Borrar Post">
+    </div>
+  </div>
+</div>

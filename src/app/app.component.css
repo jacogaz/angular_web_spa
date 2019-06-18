@@ -1,0 +1,38 @@
+.app-footer{
+    background-color: #2e2e2e;
+    color: gainsboro;
+    font-family: 'Lato', sans-serif;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.footer-copyright{
+    background-color: #292929;
+}
+
+.enlace-footer{
+    color: white;
+    font-size: 18px;
+}
+
+.icono{
+    font-size: 35px;
+}
+
+.centrado{
+    justify-content: center;
+  }
+
+.footerSubindice{
+    font-weight: 400;
+    line-height: 2em;
+    font-size: 15px;
+}
+
+nav{
+    opacity: 0.8;
+}
+
+.texto-footer{
+    font-size:23px;
+}

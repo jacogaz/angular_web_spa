@@ -1,0 +1,20 @@
+a{
+    cursor: pointer;
+}
+
+.textCtm{
+    color: #dc3545;
+}
+
+.centrado{
+    justify-content: center;
+  }
+
+input{
+    border-radius: 10rem;
+}
+
+.container-fluid{
+    background-color: rgba(0, 0, 0, 0.03)
+}
+  

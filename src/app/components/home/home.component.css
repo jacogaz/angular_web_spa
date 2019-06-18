@@ -1,0 +1,89 @@
+.post-image{
+    overflow: hidden;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.post-image:hover{
+    opacity: 0.8;
+}
+
+.title{
+    color: rgb(36, 35, 35);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-body p{
+    color: rgb(94, 90, 90);
+    font-size: 15px;
+}
+
+.card-body{
+    height: 100%;
+}
+
+.card-header{
+    background-color: rgba(250, 250, 250, 0.815);
+}
+
+.enlace{
+    font-size: 14px;
+}
+
+.tituloEnlace{
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.tituloEnlace:hover{
+    text-decoration: underline;
+}
+
+.fas{
+    font-size: 45px;
+    cursor: pointer;
+    color: gray;
+}
+
+.fas:hover{
+    color: grey;
+    cursor: pointer;
+}
+
+.card-title > a{
+    color: black;
+}
+
+.sidebar {
+    width: 25%;
+    height: 25vh; 
+    min-height: 200px;
+    overflow: auto;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5%;
+  }
+  
+  .main {
+    width: 100%;
+    height: 100vh;
+    min-height: 1000px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main,
+  .sidebar {
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    padding: 15px;
+  }
+  
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  

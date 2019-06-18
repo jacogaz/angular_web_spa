@@ -1,0 +1,11 @@
+.centrado{
+    justify-content: center;
+  }
+
+  .container-fluid{
+    background-color: rgba(0, 0, 0, 0.03)
+}
+input{
+  border-radius: 10rem;
+}
+  

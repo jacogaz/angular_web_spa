@@ -1,0 +1,40 @@
+<div class="container-fluid">
+<div class="row ml-4" style="margin-top: 75px;">
+  
+  <div class="col-12 col-md-12 centrado">
+    <form #postNew="ngForm" (ngSubmit) = "onSubmit(postNew)">
+      <div class="form-group">
+        <label for="title">Titulo</label>
+        <input type="text" name="title" #title="ngModel" [(ngModel)]="post.title" class="form-control" required>
+        <small *ngIf="!title.valid && title.touched" class="invalid-feedback d-block">
+          El título no es válido
+        </small>
+      </div>
+      <div class="form-group my-3">
+        <label for="content">Contenido</label>
+        <textarea [froalaEditor]="froala_options" name="content" #content="ngModel" [(ngModel)]="post.content" required></textarea>
+        <small *ngIf="!content.valid && content.touched" class="invalid-feedback d-block">
+            El contenido no es válido
+          </small>
+      </div>
+      <div class="form-group my-4">
+        <label for="image">Imagen</label>
+        <angular-file-uploader
+        [config]="afuConfig"
+        (ApiResponse)="imageUpload($event)">
+        </angular-file-uploader>
+      </div>
+      <div class="form-group mt-3 mb-3">
+          <input type="submit" value="Guardar" class="btn btn-danger" [disabled]="postNew.invalid">
+          <a class="btn btn-secondary ml-3" [routerLink]="['/inicio']">Volver</a>
+      </div>
+    </form>
+    <div class="alert alert-danger col-md-12 text-align-center" *ngIf="status == 'error'">
+      Ha ocurrido un error.
+    </div>
+    <div class="alert alert-success col-md-12 text-align-center" *ngIf="status == 'success'">
+      Post creado correctamente
+    </div>
+  </div>
+</div>
+</div>

@@ -1,20 +1,127 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container-fluid ">
+  
+  <nav class="navbar navbar-expand-lg fixed-top bg-white mb-5" *ngIf="identity">
+    <div class="container-fluid ml-5 mr-5">
+        <a class="navbar-brand mx-0 px-0 py-0" [routerLink]="['/inicio']"><img src="assets/imgs/ctm_logotipo.png" class="w-25"
+          alt=""></a>
+      <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-right" *ngIf="identity && identity.email">
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Mi cuenta
+            </a>
+            <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+              <a *ngIf="identity.role == 'ROLE_ADMIN'" class="dropdown-item text-dark bg-light"
+                [routerLink]="['/new-post']">Create Post</a>
+              <a class="dropdown-item text-dark bg-light" [routerLink]="['/ajustes']">Edit your profile</a>
+              <a class="dropdown-item text-dark bg-light" [routerLink]="['/logout/1']">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
+<!-- 
+  <nav class="navbar navbar-expand-lg fixed-top bg-light mb-5 ">
+    <div class="container">
+        <a class="navbar-brand mx-0 px-0 py-0" [routerLink]="['/inicio']"><img src="assets/imgs/ctm_logotipo.png" class="w-25 p-3"
+          alt=""></a>
+        <div class="collapse navbar-collapse ml-auto" id="navbarNav">
+          <ul class="navbar-nav navbar-right" *ngIf="identity && identity.email">
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Mi cuenta
+                </a>
+                <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                  <a *ngIf="identity.role == 'ROLE_ADMIN'" class="dropdown-item text-dark bg-light"
+                    [routerLink]="['/new-post']">Create Post</a>
+                  <a class="dropdown-item text-dark bg-light" [routerLink]="['/ajustes']">Edit your profile</a>
+                  <a class="dropdown-item text-dark bg-light" [routerLink]="['/logout/1']">Logout</a>
+                </div>
+              </li>
+            </ul>
+        </div>
+    </div>
+     
+    </nav>-->
+  
+
+  <!-- Contenido-->
+  <router-outlet></router-outlet>
+
+
+  <footer class="app-footer mt-3 px-5" *ngIf="this.identity">
+    <div class="row">
+      <div class="col-md-4 col-lg-4 ml-lg-0 border-right ml-5">
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mb-4 texto-footer">About</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <p>
+              <a class="enlace-footer" [routerLink]="['/contact']">Contact</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <a class="enlace-footer" [routerLink]="['/about']">About us</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <a class="enlace-footer" [routerLink]="['/inicio']">Blog</a>
+            </p>
+          </li>
+        </ul>
+
+      </div>
+      <div class="col-md-4 col-lg-4 ml-lg-0">
+          <h6 class="text-uppercase mb-4 font-weight-bold texto-footer">Contact</h6>
+          <p class="footerSubindice">
+            <i class="fas fa-home mr-3 "></i>C/ Bueso Pineda, 13, 28043, Madrid</p>
+          <p class="footerSubindice">
+            <i class="fas fa-envelope mr-3"></i>prensa@clinicaltopicsinmedicine.com</p>
+          <p class="footerSubindice">
+            <i class="fas fa-phone mr-3"></i>+34 91 3882854</p>
+      </div>
+      <div class="col-md-4 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-facebook-f icono"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-twitter icono"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                <i class="fab fa-linkedin-in icono"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <div *ngIf="this.identity" class="footer-copyright text-light text-center py-3">© 2019 Copyright:
+      <a href="https://ephm.es" class="text-danger"> www.ephm.es</a>
+    </div>
+</div><!-- Fin Contenedor principal -->
